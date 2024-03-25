@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App {
+  background-color: bisque;
+  min-height: 100vh;
+  .yükleniyor {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    img {
+      width: 7%;
+      animation: sektirme;
+      animation-iteration-count: infinite;
+      animation-duration: 4s;
+      animation-direction: alternate;
+    }
+  }
+
+  header {
+    padding: 2rem;
+    text-align: center;
+    .image {
+      img {
+        max-width: 200px;
+      }
+    }
+    .title {
+      /* border: 1px solid red; */
+      h1 {
+        font-size: 2.5rem;
+         margin: 1rem;
+      }
+    }
+
+    input {
+      width: 40%;
+      padding: 10px;
+    }
+  }
+
+  .card-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 0 1.5rem;
+
+    .player-card {
+      width: 250px;
+      height: 350px;
+
+      &:hover .image img {
+        transform: scale(0.9);
+      }
+      &:hover .name {
+        font-size: 1.2rem;
+      }
+
+      .image {
+        background-color: #1c4288cf;
+        background-image: url(./assets/silhouette-3272331_1280.png);
+        background-position: center;
+        background-size: cover;
+        padding: 10px 0;
+        width: 100%;
+        height: 300px;
+        img {
+          cursor: pointer;
+          width: 90%;
+          height: 100%;
+          transition: all 1s;
+        }
+        .details{
+            background-color: #f4d36756;
+            color: white;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 1rem;
+            padding-left: 4rem;
+            list-style: none;
+            
+            li::before{
+                content: ""; 
+                display: inline-block; 
+                width: 20px; 
+                height: 20px; 
+                background-image: url(./assets/basketball-147794_1280\ \(1\).png); 
+                background-size: cover;
+                margin-right: 5px;
+            }
+          }
+          
+      }
+      
+      .name {
+        background-color: #c7102e;
+        color: white;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transition: all 1s;
+      }
+    }
+  }
+}
+
+@keyframes sektirme {
+    0%, 100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1)
+    }
+    50% {
+      transform: translateY(-100%);
+      animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060)
+    }
+  }
